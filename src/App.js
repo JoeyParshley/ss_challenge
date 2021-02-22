@@ -20,21 +20,14 @@ function App() {
   }, [setAppState]);
   return (
       <div className='App'>
-        <div className='container'>
-          <h1>My Repositories</h1>
-        </div>
-        <div className='repo-container'>
-          <ListLoading isLoading={appState.loading} people={appState.people} />
-        </div>
-        <footer>
-          <div className='footer'>
-            Built{' '}
-            <span role='img' aria-label='love'>
-            💚
-          </span>{' '}
-            with by Shedrack Akintayo
-          </div>
-        </footer>
+        <main className='wrapper'>
+          <section className='top'>
+            <h1>The Force is Strong in This One</h1>
+          </section>
+          <section className='people' id='people'>
+            <ListLoading isLoading={appState.loading} people={appState.people} />
+          </section>
+        </main>
       </div>
   );
 }

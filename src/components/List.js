@@ -6,16 +6,15 @@ const List = (props) => {
   const { people } = props;
   if (!people || people.length === 0) return <p>No people, sorry</p>;
   return (
-      <ul>
-        <h2 className='list-head'>Available Public Repositories</h2>
+      <ul className='clearfix'>
         {people.map((p, index) => {
           return (
               <li key={index} className='list'>
-                <span className='repo-text'>{p.name}</span>
-                <span className='repo-origin'> Origin: {p.homeworld}</span>
-                <span className='repo-height'> Height: {p.height}</span>
-                <span className='repo-mass'> Mass: {p.mass}</span>
-                <span className='repo-birth_year'> Birth Year: {p.birth_year}</span>
+                <span className='field'>{p.name}</span>
+                <span className='field'>Origin:<span> {p.homeworld}</span></span>
+                <span className='field'>Height:<span> {p.height}</span></span>
+                <span className='field'>Mass:<span> {p.mass}</span></span>
+                <span className='field'>Birth Year:<span> {p.birth_year}</span></span>
               </li>
           );
         })}
